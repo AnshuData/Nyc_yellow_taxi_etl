@@ -1,0 +1,11 @@
+start_date: '2017-05-29'
+end_date: '2017-06-01'
+
+landing_zone_file: 'data/landing_zone/raw_data.parquet'
+bronze_layer_file: 'data/bronze_layer/cleaned_data.parquet'
+silver_layer_file: 'data/silver_layer/quality_checked_data.parquet'
+gold_layer_file: 'data/gold_layer/summarized.parquet'
+
+
+col_required: ['fareAmount', 'extra', 'mtaTax','improvementSurcharge', 'tipAmount', 'tollsAmount', 'totalAmount']
+

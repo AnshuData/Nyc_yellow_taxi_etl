@@ -1,0 +1,37 @@
+NYC Taxi Data Pipeline
+This pipeline is ingest, clean, perform data quality checks, and summarizes the statistics NYC taxi data. 
+It follows a modular structure with separate modules for each stage of the pipeline.
+
+
+Overview
+The pipeline consists of the following stages:
+
+Setup Pipeline: Initializes logging and directory structures for intermediate data and logs.
+Extract Data: Ingests NYC TLC Yellow taxi data for a specified date range and saves it to the landing zone directory.
+Clean Data: Cleanses the ingested data and saves it to the bronze layer directory.
+Data Quality Check: Checks the quality of the data in the bronze layer and saves the cleaned data to the silver layer directory.
+Data Transformation: Performs data transformations on the data in the silver layer and saves the transformed data to the gold layer directory.
+Data Statistics : The output is mean, median of cost, price and passeger count. The output is saved as parquet.
+
+Steps to run pipeline :
+
+#install dependencies
+1. pip install -r requirements.txt
+
+2. Input date in config.yaml file : start and end date for the period you want to retreive data
+
+#run python script; This will trigger the execution of all pipeline stages.
+3. python main.py
+
+Configuration:
+  Ensure that the configuration file config.yaml is present and properly configured.
+
+Dependencies
+The script requires the following dependencies:
+
+src.config: Module for loading configuration from a YAML file.
+src.setup_pipeline: Module for setting up the pipeline environment.
+src.extract_data: Module for ingesting data from the Azure OpenDataset.
+src.clean_data: Module for cleaning and preprocessing the data.
+src.data_quality_check: Module for performing data quality checks.
+src.data_transformation: Module for transforming the data.
